@@ -9,6 +9,5 @@ public class Main {
         contaBancaria.sacarDinheiro(new BigDecimal("5.00"));
         System.out.println(contaBancaria.consultarSaldo());
 
-
     }
 }
