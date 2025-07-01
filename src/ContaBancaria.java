@@ -25,6 +25,18 @@ public class ContaBancaria {
     }
 
     public void sacarDinheiro(BigDecimal valorSacado) {
+        BigDecimal limiteDisponivel = consultarSaldo().add(consultarChequeEspecial());
+
+        if (valorSacado.compareTo(new BigDecimal("0")) <= 0) {
+            System.out.println("Valor para saque inválido.");
+            return;
+        }
+
+        if (valorSacado.compareTo(limiteDisponivel) > 0) {
+            System.out.println("Saldo insuficiente para saque.");
+            return;
+        }
+
         this.saldo = this.saldo.subtract(valorSacado);
     }
 
