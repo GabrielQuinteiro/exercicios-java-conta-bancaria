@@ -13,5 +13,8 @@ public class Main {
         contaBancaria.sacarDinheiro(new BigDecimal("30.00"));
         System.out.println(contaBancaria.consultarSaldo());
 
+        contaBancaria.depositarDinheiro(new BigDecimal("100"));
+        System.out.println(contaBancaria.consultarSaldo());
+
     }
 }
