@@ -1,3 +1,5 @@
+package Exercicio1;
+
 import java.math.BigDecimal;
 
 public class Main {
