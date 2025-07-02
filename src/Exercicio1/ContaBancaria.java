@@ -2,6 +2,10 @@ package Exercicio1;
 
 import java.math.BigDecimal;
 
+/*
+* TODO: implementar método de pagar boleto e exibir infos
+*/
+
 public class ContaBancaria {
     private BigDecimal saldo;
     private final BigDecimal chequeEspecial;
@@ -37,13 +41,14 @@ public class ContaBancaria {
     private void aplicarTaxaChequeEspecial(BigDecimal valorCobertura) {
         BigDecimal valorCobertoChequeEspecial;
 
+        /* se saldo atual + valorCobertura for maior ou igual a zero */
         if (this.saldo.add(valorCobertura).compareTo(BigDecimal.ZERO) >= 0) {
-            valorCobertoChequeEspecial = this.saldo.abs();
+            valorCobertoChequeEspecial = this.saldo.abs(); /* pega o valor abs do saldo */
         } else {
             valorCobertoChequeEspecial = valorCobertura;
         }
 
-        BigDecimal taxaChequeEspecial = valorCobertoChequeEspecial.multiply(new BigDecimal("0.20"));
+        BigDecimal taxaChequeEspecial = valorCobertoChequeEspecial.multiply(new BigDecimal("0.20")); /* taxa de 20% */
 
         this.saldo = this.saldo.subtract(taxaChequeEspecial);
     }
